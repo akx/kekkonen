@@ -1,8 +1,57 @@
 {
   "name": "kekkonen",
-  "version": "0.0.0",
-  "main": "index.js",
+  "version": "0.1.0-rc0",
   "author": "Aarni Koskela",
   "license": "MIT",
-  "private": false
+  "main": "dist/kekkonen.cjs.js",
+  "typings": "dist/index.d.ts",
+  "module": "dist/kekkonen.esm.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "yarn build --watch",
+    "build": "node build.js",
+    "ts": "tsc --noEmit",
+    "lint": "eslint .",
+    "prepare": "yarn ts && yarn build",
+    "size": "size-limit"
+  },
+  "peerDependencies": {
+    "react": ">=16.3"
+  },
+  "prettier": {
+    "trailingComma": "all"
+  },
+  "size-limit": [
+    {
+      "path": "dist/kekkonen.cjs.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/kekkonen.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^7.0.4",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "esbuild": "^0.14.3",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.27.1",
+    "npm-dts": "^1.3.10",
+    "prettier": "^2.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "size-limit": "^7.0.4",
+    "typescript": "^4.5.4"
+  }
 }
