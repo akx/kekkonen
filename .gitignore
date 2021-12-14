@@ -1,7 +1,8 @@
+*.local
 *.log
 *.tgz
 .DS_Store
 .cache
-/dist
-example
+dist
+dist-ssr
 node_modules
